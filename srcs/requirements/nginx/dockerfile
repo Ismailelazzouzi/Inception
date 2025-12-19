@@ -1,0 +1,16 @@
+FROM debian:bullseye
+
+RUN apt-get update && apt-get install -y \
+    nginx \
+    openssl \
+    && rm -rf /var/lib/apt/lists/* \
+    && mkdir -p /etc/nginx/ssl \
+    && mkdir -p /var/run/nginx
+
+COPY tools/nginx.crt /etc/nginx/ssl/
+COPY tools/nginx.key /etc/nginx/ssl/
+COPY conf/nginx.conf /etc/nginx/sites-available/default
+
+EXPOSE 443
+
+CMD ["nginx", "-g", "daemon off;"]
