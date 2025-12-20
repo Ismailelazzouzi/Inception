@@ -2,7 +2,7 @@ NAME = inception
 
 COMPOSE_FILE = srcs/docker-compose.yml
 
-DATA_DIR = /home/samael/data
+DATA_DIR = /home/isel-azz/data
 
 all: up
 

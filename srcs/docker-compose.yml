@@ -66,10 +66,10 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /home/samael/data/mariadb
+      device: /home/isel-azz/data/mariadb
   wordpress_data:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /home/samael/data/wordpress
+      device: /home/isel-azz/data/wordpress
